@@ -143,6 +143,43 @@ function initialize()
 	
 	markerRoot2.add( mesh2 );
 
+	markerRoot4 = new THREE.Group();
+	scene.add(markerRoot4);
+	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
+		type: 'pattern', patternUrl: "data/letterC.patt",
+	})
+
+	let geometry4	= new THREE.SphereGeometry(1,2,1);
+	let material4	= new THREE.MeshNormalMaterial({
+		transparent: true,
+		opacity: 0.5,
+		side: THREE.DoubleSide
+	}); 
+	
+	mesh4 = new THREE.Mesh( geometry4, material4 );
+	mesh4.position.y = 0.5;
+	
+	markerRoot4.add( mesh4 );
+
+	// Sphere
+	markerRoot5 = new THREE.Group();
+	scene.add(markerRoot5);
+	let markerControls5 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot5, {
+		type: 'pattern', patternUrl: "data/letterD.patt",
+	})
+
+	let geometry5	= new THREE.SphereGeometry(1, 32, 16);
+	let material5	= new THREE.MeshNormalMaterial({
+		transparent: true,
+		opacity: 0.5,
+		side: THREE.DoubleSide
+	}); 
+	
+	mesh5 = new THREE.Mesh( geometry5, material5 );
+	mesh5.position.y = 0.5;
+	
+	markerRoot5.add( mesh5 );
+
 	// Hole?
 
 	// build markerControls
