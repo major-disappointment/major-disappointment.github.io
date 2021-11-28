@@ -127,11 +127,10 @@ function initialize()
 	mesh1 = new THREE.Mesh( geometry1, material1 );
 	mesh1.position.y = 0.5;
 	
-	domEvents.addEventListener( mesh1, 'touchstart', correctAnswer )
-	domEvents.addEventListener( mesh1, 'click', correctAnswer )
-
 	markerRoot1.add( mesh1 );
-
+	
+	domEvents.addEventListener( markerRoot1, 'touchstart', correctAnswer )
+	domEvents.addEventListener( markerRoot1, 'click', correctAnswer )
 
 	// Sphere?
 	markerRoot2 = new THREE.Group();
