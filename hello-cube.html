@@ -12,7 +12,6 @@
 	<script src="threex/threex-artoolkitcontext.js"></script>
 	<script src="threex/threex-arbasecontrols.js"></script>
 	<script src="threex/threex-armarkercontrols.js"></script>
-	<script src='threex/threex.domevents.js'></script>
 </head>
 
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
@@ -58,8 +57,6 @@ function initialize()
 	renderer.domElement.style.top = '0px'
 	renderer.domElement.style.left = '0px'
 	document.body.appendChild( renderer.domElement );
-
-	domEvents = new THREEx.DomEvents( camera, renderer.domElement )
 
 	clock = new THREE.Clock();
 	deltaTime = 0;
@@ -113,7 +110,7 @@ function initialize()
 
 	// click event
 	renderer.domElement.addEventListener('click', click)
-	renderer.domElement.addEventListener('touchstart', click)
+	renderer.domElement.addEventListener('touchstart', touch)
 
 	// build markerControls
 	markerRoot1 = new THREE.Group();
@@ -267,9 +264,29 @@ function click(event)
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
 	}
-	console.log(event.clientX - left + " " + renderer.getSize().width * 2/3)
 	if (event.clientX - left > renderer.getSize().width * 2/3) {
 		if (event.clientY - top < renderer.getSize().height / 2) {
+			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
+		}
+		else {
+			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
+		}
+	}
+}
+function touch(event) 
+{
+	let left = renderer.domElement.getBoundingClientRect().left
+	let top = renderer.domElement.getBoundingClientRect().top
+	if (event.touches[0].clientX - left < renderer.getSize().width / 3) {
+		if (event.touches[0].clientX - top < renderer.getSize().height / 2) {
+			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/certo.png")
+		}
+		else {
+			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
+		}
+	}
+	if (event.touches[0].clientX - left > renderer.getSize().width * 2/3) {
+		if (event.touches[0].clientY - top < renderer.getSize().height / 2) {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
 		else {
