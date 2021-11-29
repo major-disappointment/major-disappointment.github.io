@@ -122,7 +122,7 @@ function initialize()
 	camera.add(clickdiv1)
 	clickdiv1.position.set(0,0,-3)
 	domEvents.addEventListener(clickdiv1, 'click', correctAnswer)
-	domEvents.addEventListener(clickdiv1, 'touchstart', wrongAnswer)
+	domEvents.addEventListener(clickdiv1, 'touchstart', correctAnswer)
 
 	let clickdiv2 = new THREE.Mesh()
 	clickdiv2.geometry.setIndex([0,3,2,2,1,0])
