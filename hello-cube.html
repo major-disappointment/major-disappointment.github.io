@@ -126,11 +126,13 @@ function initialize()
 	
 	mesh1 = new THREE.Mesh( geometry1, material1 );
 	mesh1.position.y = 0.5;
-	
+
 	markerRoot1.add( mesh1 );
+
+	// click event cube correct answer
+	domEvents.addEventListener( markerRoot1, 'touchstart', correctAnswer )
+	domEvents.addEventListener( markerRoot1, 'click', correctAnswer )
 	
-	domEvents.addEventListener( mesh1, 'touchstart', correctAnswer )
-	domEvents.addEventListener( mesh1, 'click', correctAnswer )
 
 	// Sphere?
 	markerRoot2 = new THREE.Group();
@@ -148,9 +150,13 @@ function initialize()
 	
 	mesh2 = new THREE.Mesh( geometry2, material2 );
 	mesh2.position.y = 0.5;
-	
-	markerRoot2.add( mesh2 );
 
+	markerRoot2.add( mesh2 );
+	
+	// click event sphere wrong answer
+	domEvents.addEventListener( markerRoot2, 'touchstart', wrongAnswer )
+	domEvents.addEventListener( markerRoot2, 'click', wrongAnswer )
+	
 	markerRoot4 = new THREE.Group();
 	scene.add(markerRoot4);
 	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
@@ -166,8 +172,12 @@ function initialize()
 	
 	mesh4 = new THREE.Mesh( geometry4, material4 );
 	mesh4.position.y = 0.5;
-	
+
 	markerRoot4.add( mesh4 );
+
+	// click event pyramid wrong answer
+	domEvents.addEventListener( markerRoot4, 'touchstart', wrongAnswer )
+	domEvents.addEventListener( markerRoot4, 'click', wrongAnswer )
 
 	// Sphere
 	markerRoot5 = new THREE.Group();
@@ -187,6 +197,10 @@ function initialize()
 	mesh5.position.y = 0.5;
 	
 	markerRoot5.add( mesh5 );
+
+	// click event sphere wrong answer
+	domEvents.addEventListener( markerRoot5, 'touchstart', wrongAnswer )
+	domEvents.addEventListener( markerRoot5, 'click', wrongAnswer )
 
 	// Hole?
 
