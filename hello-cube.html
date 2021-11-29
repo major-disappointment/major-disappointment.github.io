@@ -45,6 +45,7 @@ function initialize()
 	scene.add( ambientLight );
 				
 	camera = new THREE.PerspectiveCamera(36, 1, 1, 100);
+	camera.position.set(0, 0, 3)
 	scene.add(camera);
 
 	renderer = new THREE.WebGLRenderer({
