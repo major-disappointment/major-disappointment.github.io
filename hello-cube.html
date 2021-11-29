@@ -4,6 +4,7 @@
 	<title>Hello, AR Cube!</title>
 	<!-- include three.js library -->
 	<script src='js/three.js'></script>
+	<script src='js/three.min.js'></script>
 	<!-- include jsartookit -->
 	<script src="jsartoolkit5/artoolkit.min.js"></script>
 	<script src="jsartoolkit5/artoolkit.api.js"></script>
@@ -112,7 +113,6 @@ function initialize()
 	////////////////////////////////////////////////////////////
 
 	// click areas
-	
 	let clickdiv1 = new THREE.Mesh()
 	clickdiv1.geometry.setIndex([0,3,2,2,1,0])
 	clickdiv1.geometry.setAttribute('position', new THREE.Float32BufferAttribute([-1,-1,0,-1,0,0,-0.30,0,0,-0.30,-1,0], 3))
