@@ -273,17 +273,16 @@ function click(event)
 }
 function touch(event) 
 {
-	let width = Math.min(window.innerWidth, window.innerHeight), height = Math.max(window.innerWidth, window.innerHeight)
-	if (event.touches[0].clientX < width / 3) {
-		if (event.touches[0].clientY < height / 2) {
+	if (event.touches[0].clientX < window.innerWidth / 3) {
+		if (event.touches[0].clientY < window.innerHeight / 2) {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/certo.png")
 		}
 		else {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
 	}
-	if (event.touches[0].clientX > width * 2/3) {
-		if (event.touches[0].clientY < height / 2) {
+	if (event.touches[0].clientX > window.innerWidth * 2/3) {
+		if (event.touches[0].clientY < window.innerHeight / 2) {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
 		else {
