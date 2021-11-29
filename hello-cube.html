@@ -110,6 +110,35 @@ function initialize()
 	// setup markerRoots
 	////////////////////////////////////////////////////////////
 
+	// click areas
+	let clickdiv1 = new THREE.Mesh()
+	clickdiv1.geometry.setIndex([0,3,2,2,1,0])
+	clickdiv1.geometry.setAttribute('position', new THREE.Float32BufferAttribute([-1,-1,0,-1,0,0,-0.30,0,0,-0.30,-1,0], 3))
+	clickdiv1.material = new THREE.MeshBasicMaterial({vertexColors: true, wireframe: false, transparent: true})
+	scene.add(clickdiv1)
+	domEvents.addEventListener(clickdiv1, 'click', correctAnswer)
+
+	let clickdiv2 = new THREE.Mesh()
+	clickdiv2.geometry.setIndex([0,3,2,2,1,0])
+	clickdiv2.geometry.setAttribute('position', new THREE.Float32BufferAttribute([-1,0,0,-1,1,0,-0.30,1,0,-0.30,0,0], 3))
+	clickdiv2.material = new THREE.MeshBasicMaterial({vertexColors: true, wireframe: false, transparent: true})
+	scene.add(clickdiv2)
+	domEvents.addEventListener(clickdiv2, 'click', wrongAnswer)
+
+	let clickdiv3 = new THREE.Mesh()
+	clickdiv3.geometry.setIndex([0,3,2,2,1,0])
+	clickdiv3.geometry.setAttribute('position', new THREE.Float32BufferAttribute([0.30,-1,0,0.30,0,0,1,0,0,1,-1,0], 3))
+	clickdiv3.material = new THREE.MeshBasicMaterial({vertexColors: true, wireframe: false, transparent: true})
+	scene.add(clickdiv3)
+	domEvents.addEventListener(clickdiv3, 'click', wrongAnswer)
+
+	let clickdiv4 = new THREE.Mesh()
+	clickdiv4.geometry.setIndex([0,3,2,2,1,0])
+	clickdiv4.geometry.setAttribute('position', new THREE.Float32BufferAttribute([0.30,0,0,0.30,1,0,1,1,0,1,0,0], 3))
+	clickdiv4.material = new THREE.MeshBasicMaterial({vertexColors: true, wireframe: false, transparent: true})
+	scene.add(clickdiv4)
+	domEvents.addEventListener(clickdiv4, 'click', wrongAnswer)
+
 	// build markerControls
 	markerRoot1 = new THREE.Group();
 	scene.add(markerRoot1);
@@ -128,11 +157,6 @@ function initialize()
 	mesh1.position.y = 0.5;
 
 	markerRoot1.add( mesh1 );
-
-	// click event cube correct answer
-	domEvents.addEventListener( mesh1, 'touchstart', correctAnswer )
-	domEvents.addEventListener( mesh1, 'click', correctAnswer )
-	
 
 	// Sphere?
 	markerRoot2 = new THREE.Group();
@@ -153,10 +177,6 @@ function initialize()
 
 	markerRoot2.add( mesh2 );
 	
-	// click event sphere wrong answer
-	domEvents.addEventListener( mesh2, 'touchstart', wrongAnswer )
-	domEvents.addEventListener( mesh2, 'click', wrongAnswer )
-	
 	markerRoot4 = new THREE.Group();
 	scene.add(markerRoot4);
 	let markerControls4 = new THREEx.ArMarkerControls(arToolkitContext, markerRoot4, {
@@ -174,11 +194,6 @@ function initialize()
 	mesh4.position.y = 0.5;
 
 	markerRoot4.add( mesh4 );
-
-	// click event pyramid wrong answer
-	domEvents.addEventListener( mesh4, 'touchstart', wrongAnswer )
-	domEvents.addEventListener( mesh4, 'click', wrongAnswer )
-
 	// Sphere
 	markerRoot5 = new THREE.Group();
 	scene.add(markerRoot5);
@@ -197,10 +212,6 @@ function initialize()
 	mesh5.position.y = 0.5;
 	
 	markerRoot5.add( mesh5 );
-
-	// click event sphere wrong answer
-	domEvents.addEventListener( mesh5, 'touchstart', wrongAnswer )
-	domEvents.addEventListener( mesh5, 'click', wrongAnswer )
 
 	// Hole?
 
