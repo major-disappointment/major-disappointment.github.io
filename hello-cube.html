@@ -130,8 +130,8 @@ function initialize()
 	markerRoot1.add( mesh1 );
 
 	// click event cube correct answer
-	domEvents.addEventListener( geometry1, 'touchstart', correctAnswer )
-	domEvents.addEventListener( geometry1, 'click', correctAnswer )
+	domEvents.addEventListener( mesh1, 'touchstart', correctAnswer )
+	domEvents.addEventListener( mesh1, 'click', correctAnswer )
 	
 
 	// Sphere?
@@ -154,8 +154,8 @@ function initialize()
 	markerRoot2.add( mesh2 );
 	
 	// click event sphere wrong answer
-	domEvents.addEventListener( geometry2, 'touchstart', wrongAnswer )
-	domEvents.addEventListener( geometry2, 'click', wrongAnswer )
+	domEvents.addEventListener( mesh2, 'touchstart', wrongAnswer )
+	domEvents.addEventListener( mesh2, 'click', wrongAnswer )
 	
 	markerRoot4 = new THREE.Group();
 	scene.add(markerRoot4);
@@ -176,8 +176,8 @@ function initialize()
 	markerRoot4.add( mesh4 );
 
 	// click event pyramid wrong answer
-	domEvents.addEventListener( geometry4, 'touchstart', wrongAnswer )
-	domEvents.addEventListener( geometry4, 'click', wrongAnswer )
+	domEvents.addEventListener( mesh4, 'touchstart', wrongAnswer )
+	domEvents.addEventListener( mesh4, 'click', wrongAnswer )
 
 	// Sphere
 	markerRoot5 = new THREE.Group();
@@ -199,8 +199,8 @@ function initialize()
 	markerRoot5.add( mesh5 );
 
 	// click event sphere wrong answer
-	domEvents.addEventListener( geometry5, 'touchstart', wrongAnswer )
-	domEvents.addEventListener( geometry5, 'click', wrongAnswer )
+	domEvents.addEventListener( mesh5, 'touchstart', wrongAnswer )
+	domEvents.addEventListener( mesh5, 'click', wrongAnswer )
 
 	// Hole?
 
