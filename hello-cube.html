@@ -122,6 +122,7 @@ function initialize()
 	camera.add(clickdiv1)
 	clickdiv1.position.set(0,0,-3)
 	domEvents.addEventListener(clickdiv1, 'click', correctAnswer)
+	domEvents.addEventListener(clickdiv1, 'touchstart', wrongAnswer)
 
 	let clickdiv2 = new THREE.Mesh()
 	clickdiv2.geometry.setIndex([0,3,2,2,1,0])
@@ -130,6 +131,7 @@ function initialize()
 	camera.add(clickdiv2)
 	clickdiv2.position.set(0,0,-3)
 	domEvents.addEventListener(clickdiv2, 'click', wrongAnswer)
+	domEvents.addEventListener(clickdiv2, 'touchstart', wrongAnswer)
 
 	let clickdiv3 = new THREE.Mesh()
 	clickdiv3.geometry.setIndex([0,3,2,2,1,0])
@@ -138,6 +140,7 @@ function initialize()
 	camera.add(clickdiv3)
 	clickdiv3.position.set(0,0,-3)
 	domEvents.addEventListener(clickdiv3, 'click', wrongAnswer)
+	domEvents.addEventListener(clickdiv3, 'touchstart', wrongAnswer)
 
 	let clickdiv4 = new THREE.Mesh()
 	clickdiv4.geometry.setIndex([0,3,2,2,1,0])
@@ -146,6 +149,7 @@ function initialize()
 	camera.add(clickdiv4)
 	clickdiv4.position.set(0,0,-3)
 	domEvents.addEventListener(clickdiv4, 'click', wrongAnswer)
+	domEvents.addEventListener(clickdiv4, 'touchstart', wrongAnswer)
 
 	// build markerControls
 	markerRoot1 = new THREE.Group();
