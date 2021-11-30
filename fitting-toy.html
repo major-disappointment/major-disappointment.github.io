@@ -236,6 +236,9 @@ function initialize()
 function update()
 {
 	// update artoolkit on every frame
+	if(window.innerHeight > window.innerWidth){
+  		alert("Please use landscape!");
+	}
 	if ( arToolkitSource.ready !== false )
 		arToolkitContext.update( arToolkitSource.domElement );
 }
@@ -266,7 +269,7 @@ function click(event)
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
 	}
-	if (event.x > window.innerWidth * 2/3) {
+	if (event.x > window.innerWidth * 2 / 3) {
 		if (event.y < window.innerHeight / 2) {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
@@ -277,19 +280,19 @@ function click(event)
 }
 function touch(event) 
 {
-	if (event.touches[0].clientX > window.innerWidth / 2) {
-		if (event.touches[0].clientY > window.innerHeight / 3) {
+	if (event.touches[0].clientX < window.innerWidth / 3) {
+		if (event.touches[0].clientY > window.innerHeight / 2) {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/certo.png")
 		}
-		else if (event.touches[0].clientY < window.innerHeight * 2/3) {
+		else {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
 	}
-	if (event.touches[0].clientX < window.innerWidth * 2/3) {
-		if (event.touches[0].clientY > window.innerHeight / 3) {
+	if (event.touches[0].clientX > window.innerWidth * 2 / 3 ) {
+		if (event.touches[0].clientY < window.innerHeight / 2) {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
-		else if (event.touches[0].clientY < window.innerHeight * 2/3) {
+		else {
 			window.location.replace("https://sites.unicentro.br/jornalagora/wp-content/uploads/2013/05/errado.png")
 		}
 	}
